@@ -11,7 +11,7 @@
                 <nav class="navbar-sidebar2">
                     <ul class="list-unstyled navbar__list">
                         <li>
-                            <a href="<?= base_url('dashboard') ?>">
+                            <a href="<?= base_url('beranda_op') ?>">
                                 <i class="fas fa-home"></i>Beranda</a>
                         </li>
                         <li class="has-sub">
