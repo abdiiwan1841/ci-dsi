@@ -32,6 +32,7 @@ class BaseController extends Controller
 	protected $LokasiModel;
 	protected $SatuanModel;
 	protected $VendorModel;
+	// protected $ProdukModel;
 
 	/**
 	 * Constructor.
@@ -59,5 +60,7 @@ class BaseController extends Controller
 		$this->SatuanModel = new \App\Models\Unit_model();
 
 		$this->VendorModel = new \App\Models\Vendor_model();
+
+		// $this->ProdukModel = new \App\Models\Product_model();
 	}
 }

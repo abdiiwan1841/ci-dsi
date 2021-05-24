@@ -50,7 +50,6 @@
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
-
                     </div>
                     <!-- END DATA TABLE-->
                 </div>
