@@ -23,11 +23,5 @@ class Product extends BaseController
 
         return view('operator/product/add_edit', $data);
     }
-
-    public function proses_add()
-    {
-        if(!empty($_POST)){
-            dd($_POST);
-        }
-    }
+    
 }
