@@ -27,12 +27,12 @@ class BaseController extends Controller
 	 *
 	 * @var array
 	 */
-	protected $helpers = [];
+	protected $helpers = ['Rupiah_helper'];
 	protected $KategoriModel;
 	protected $LokasiModel;
 	protected $SatuanModel;
 	protected $VendorModel;
-	// protected $ProdukModel;
+	protected $ProdukModel;
 
 	/**
 	 * Constructor.
@@ -61,6 +61,6 @@ class BaseController extends Controller
 
 		$this->VendorModel = new \App\Models\Vendor_model();
 
-		// $this->ProdukModel = new \App\Models\Product_model();
+		$this->ProdukModel = new \App\Models\Product_model();
 	}
 }

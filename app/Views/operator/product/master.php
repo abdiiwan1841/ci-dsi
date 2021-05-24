@@ -44,7 +44,7 @@
                                     <td><?= $pro['PREFIX_KATEGORI'] ?></td>
                                     <td><?= $pro['BLOK'] ?></td>
                                     <td><?= $pro['NOTASI'] ?></td>
-                                    <td><?= $pro['HARGA_BARANG'] ?></td>
+                                    <td><?= format_rupiah($pro['HARGA_BARANG']); ?></td>
                                     <td><?= $pro['KETERANGAN_BARANG'] ?></td>
                                     <td>
                                         <a href="<?= base_url('/edit_barangmaster_op/'.$pro['ID_BARANG']) ?>" class="btn btn-secondary btn-sm rounded-circle" title="Edit">
