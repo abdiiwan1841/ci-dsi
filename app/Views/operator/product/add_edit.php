@@ -21,7 +21,7 @@
                                         <select name="PREFIX_KATEGORI" id="PREFIX_KATEGORI" class="form-control w-100">
                                             <option value="">Pilih Opsi</option>
                                         <?php foreach($category as $cat) : ?>
-                                            <option value="<?= (isset($cat['ID_KATEGORI'])) ? $cat['ID_KATEGORI'] : '' ?>"><?= $cat['PREFIX_KATEGORI']; ?></option>
+                                            <option value="<?= $cat['ID_KATEGORI']; ?>"><?= $cat['PREFIX_KATEGORI']; ?></option>
                                         <?php endforeach; ?>
                                         </select>
                                     </div>

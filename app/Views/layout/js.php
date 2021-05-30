@@ -152,7 +152,7 @@
 
 // =============================================================================================================
 
-                }if(data == 'tambahBarang'){        // Bagian master lokasi
+                }if(data == 'tambahBarang'){        // Bagian master barang
                     Swal.fire({
                         position: 'center',
                         icon: 'success',

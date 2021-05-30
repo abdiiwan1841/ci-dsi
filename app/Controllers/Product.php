@@ -16,17 +16,15 @@ class Product extends BaseController
         return view('operator/product/master', $data);
     }
 
-    public function add($id = NULL, $id_kategori=null)
+    public function add($id = NULL) // $id_kategori=null (Opsi selected combobox)
     {
-        
-
         if($id == NULL){
             $data = [
                 'title' => 'Tambah Barang - Operator',
-                'action' => base_url('product/process_add'),
                 'category' => $this->KategoriModel->findAll(),
                 'unit' => $this->SatuanModel->findAll(),
                 'location' => $this->LokasiModel->findAll(),
+                'action' => base_url('product/process_add'),
                 'formHeader' => 'Tambah Barang'
             ];
         }else{
@@ -36,7 +34,7 @@ class Product extends BaseController
             $data = [
                 'title' => 'Edit Barang - Operator',
                 'product' => $this->ProdukModel->find($id),
-                'category' => $this->KategoriModel->findAll($id_kategori),
+                'category' => $this->KategoriModel->findAll(),
                 'unit' => $this->SatuanModel->findAll(),
                 'location' => $this->LokasiModel->findAll(),
                 'action' => base_url('product/process_edit'),
@@ -79,10 +77,11 @@ class Product extends BaseController
                     'KETERANGAN_BARANG' => $this->request->getVar('KETERANGAN_BARANG'),
                     'HARGA_BARANG'  => $this->request->getVar('HARGA_BARANG'),
                 ]);
-
-                if($add){
-                    return 'tambahBarang';
-                }
+                
+                return 'tambahBarang';
+                
+            }else{
+                return 'alertaBarang';
             }
         }
     }
@@ -90,11 +89,20 @@ class Product extends BaseController
     public function process_edit()
     {
         if (!empty($_POST)){
-            $edit = $this->ProdukModel->save($_POST);
+            $add = $this->ProdukModel->save([
+                'ID_BARANG'     => $this->request->getVar('ID_BARANG'),
+                'ID_SATUAN'     => $this->request->getVar('NOTASI'),
+                'ID_LOKASI'     => $this->request->getVar('BLOK'),
+                'ID_KATEGORI'   => $this->request->getVar('PREFIX_KATEGORI'),
+                'NAMA_BARANG'   => $this->request->getVar('NAMA_BARANG'),
+                'KETERANGAN_BARANG' => $this->request->getVar('KETERANGAN_BARANG'),
+                'HARGA_BARANG'  => $this->request->getVar('HARGA_BARANG'),
+            ]);
 
-            if($edit){
-                return 'editBarang';
-            }
+            return 'editBarang';
+
+        }else{
+            return 'alertaBarang';
         }
     }
     
