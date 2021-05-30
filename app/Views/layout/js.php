@@ -152,6 +152,35 @@
 
 // =============================================================================================================
 
+                }if(data == 'tambahBarang'){        // Bagian master lokasi
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Barang berhasil diubah!',
+                        showConfirmButton: false,
+                        timer: 1500
+                    }).then(function(){
+                        window.location.href = '/brgmaster_op'; 
+                    })
+                }if(data == 'editBarang'){        
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Barang berhasil diubah!',
+                        showConfirmButton: false,
+                        timer: 1500
+                    }).then(function(){
+                        window.location.href = '/brgmaster_op'; 
+                    })
+                }if(data == 'alertaBarang'){      
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Perhatian!',
+                        text: 'Semua data harus di isi!',
+                    })
+
+// =============================================================================================================
+
                 }if(data == 'tambahVendor'){        // Bagian master vendor
                     Swal.fire({
                         position: 'center',

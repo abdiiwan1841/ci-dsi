@@ -46,6 +46,8 @@ $routes->add('/beranda_op', 'Operator::index', ['filter' => 'ceklogin_operator']
 
 $routes->add('/brgmaster_op', 'Product::index' , ['filter' => 'ceklogin_operator']);
 $routes->add('/tambah_brgmaster_op', 'Product::add', ['filter' => 'ceklogin_operator']);
+$routes->add('/edit_brgmaster_op/(:any)', 'Product::add/$1/$2', ['filter' => 'ceklogin_operator']);
+$routes->add('/hapus_brgmaster_op/(:any)', 'Product::delete/$1', ['filter' => 'ceklogin_operator']);
 
 $routes->add('/brgmasuk_op', 'ProductIn::index', ['filter' => 'ceklogin_operator']);
 $routes->add('/tambah_brgmasukmaster_op', 'ProductIn::add', ['filter' => 'ceklogin_operator']);

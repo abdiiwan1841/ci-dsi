@@ -16,8 +16,10 @@ class Product extends BaseController
         return view('operator/product/master', $data);
     }
 
-    public function add($id = NULL)
+    public function add($id = NULL, $id_kategori=null)
     {
+        
+
         if($id == NULL){
             $data = [
                 'title' => 'Tambah Barang - Operator',
@@ -28,9 +30,15 @@ class Product extends BaseController
                 'formHeader' => 'Tambah Barang'
             ];
         }else{
+            // var_dump($this->KategoriModel->find($id_kategori));
+            // exit;
+
             $data = [
                 'title' => 'Edit Barang - Operator',
                 'product' => $this->ProdukModel->find($id),
+                'category' => $this->KategoriModel->findAll($id_kategori),
+                'unit' => $this->SatuanModel->findAll(),
+                'location' => $this->LokasiModel->findAll(),
                 'action' => base_url('product/process_edit'),
                 'formHeader' => 'Edit Barang'
             ];
@@ -41,14 +49,12 @@ class Product extends BaseController
 
     public function delete($id = NULL)
     {
-        $model = new Product_model();
-
         if($id == NULL){
-            return redirect()->to('/kategori_op');
+            return redirect()->to('/brgmaster_op');
         }else{
-            $delete = $model->delete($id);
+            $delete = $this->ProdukModel->delete($id);
 
-            return redirect()->to('/kategori_op');
+            return redirect()->to('/brgmaster_op');
         }
     }
 
@@ -66,18 +72,28 @@ class Product extends BaseController
             if (!empty($_POST)){
                 $add = $this->ProdukModel->insert([
                     'ID_BARANG'     => $this->request->getVar('ID_BARANG'),
-                    'ID_SATUAN'     => $this->request->getVar('ID_SATUAN'),
-                    'ID_LOKASI'     => $this->request->getVar('ID_LOKASI'),
-                    'ID_KATEGORI'   => $this->request->getVar('ID_KATEGORI'),
+                    'ID_SATUAN'     => $this->request->getVar('NOTASI'),
+                    'ID_LOKASI'     => $this->request->getVar('BLOK'),
+                    'ID_KATEGORI'   => $this->request->getVar('PREFIX_KATEGORI'),
                     'NAMA_BARANG'   => $this->request->getVar('NAMA_BARANG'),
                     'KETERANGAN_BARANG' => $this->request->getVar('KETERANGAN_BARANG'),
                     'HARGA_BARANG'  => $this->request->getVar('HARGA_BARANG'),
                 ]);
-                dd($add);  
 
-                // if($add){
-                //     return 'tambahKategori';
-                // }
+                if($add){
+                    return 'tambahBarang';
+                }
+            }
+        }
+    }
+
+    public function process_edit()
+    {
+        if (!empty($_POST)){
+            $edit = $this->ProdukModel->save($_POST);
+
+            if($edit){
+                return 'editBarang';
             }
         }
     }

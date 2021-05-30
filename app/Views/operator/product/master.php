@@ -47,10 +47,10 @@
                                     <td><?= format_rupiah($pro['HARGA_BARANG']); ?></td>
                                     <td><?= $pro['KETERANGAN_BARANG'] ?></td>
                                     <td>
-                                        <a href="<?= base_url('/edit_barangmaster_op/'.$pro['ID_BARANG']) ?>" class="btn btn-secondary btn-sm rounded-circle" title="Edit">
+                                        <a href="<?= base_url('/edit_brgmaster_op/'.$pro['ID_BARANG'].'/'.$pro['ID_KATEGORI'])?>" class="btn btn-secondary btn-sm rounded-circle" title="Edit">
                                             <i class="zmdi zmdi-edit"></i>
                                         </a>
-                                        <a href="<?= base_url('/hapus_barangmaster_op/'.$pro['ID_BARANG']) ?>" class="delete btn btn-danger btn-sm rounded-circle" title="Hapus">
+                                        <a href="<?= base_url('/hapus_brgmaster_op/'.$pro['ID_BARANG']) ?>" class="delete btn btn-danger btn-sm rounded-circle" title="Hapus">
                                             <i class="zmdi zmdi-delete"></i>
                                         </a>
                                     </td>
