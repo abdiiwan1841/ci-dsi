@@ -50,10 +50,14 @@ $routes->add('/edit_brgmaster_op/(:any)', 'Product::add/$1/$2', ['filter' => 'ce
 $routes->add('/hapus_brgmaster_op/(:any)', 'Product::delete/$1', ['filter' => 'ceklogin_operator']);
 
 $routes->add('/brgmasuk_op', 'ProductIn::index', ['filter' => 'ceklogin_operator']);
-$routes->add('/tambah_brgmasukmaster_op', 'ProductIn::add', ['filter' => 'ceklogin_operator']);
+$routes->add('/tambah_brgmasuk_op', 'ProductIn::add', ['filter' => 'ceklogin_operator']);
+$routes->add('/edit_brgmasuk_op/(:any)', 'ProductIn::add/$1', ['filter' => 'ceklogin_operator']);
+$routes->add('/hapus_brgmasuk_op/(:any)', 'ProductIn::delete/$1', ['filter' => 'ceklogin_operator']);
 
 $routes->add('/brgkeluar_op', 'ProductOut::index', ['filter' => 'ceklogin_operator']);
-$routes->add('/tambah_brgkeluarmaster_op', 'ProductOut::add', ['filter' => 'ceklogin_operator']);
+$routes->add('/tambah_brgkeluar_op', 'ProductOut::add', ['filter' => 'ceklogin_operator']);
+$routes->add('/edit_brgkeluar_op/(:any)', 'ProductOut::add/$1', ['filter' => 'ceklogin_operator']);
+$routes->add('/hapus_brgkeluar_op/(:any)', 'ProductOut::delete/$1', ['filter' => 'ceklogin_operator']);
 
 $routes->add('/kategori_op', 'Category::index', ['filter' => 'ceklogin_operator']);
 $routes->add('/tambah_kategorimaster_op', 'Category::add', ['filter' => 'ceklogin_operator']);

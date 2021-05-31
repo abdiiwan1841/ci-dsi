@@ -33,6 +33,7 @@ class BaseController extends Controller
 	protected $SatuanModel;
 	protected $VendorModel;
 	protected $ProdukModel;
+	protected $TransaksiModel;
 
 	/**
 	 * Constructor.
@@ -62,5 +63,7 @@ class BaseController extends Controller
 		$this->VendorModel = new \App\Models\Vendor_model();
 
 		$this->ProdukModel = new \App\Models\Product_model();
+
+		$this->TransaksiModel = new \App\Models\Transac_model();
 	}
 }

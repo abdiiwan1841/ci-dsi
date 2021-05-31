@@ -9,19 +9,10 @@ class ProductOut extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'Master Barang Keluar - Operator'
+            'title' => 'Barang Masuk - Operator',
+            'transac' => $this->TransaksiModel->getTransaksiKeluar()
         ];
-
+       
         return view('operator/out-product/master', $data);
-    }
-
-    public function add()
-    {
-        $data = [
-            'title' => 'Tambah Barang Keluar - Operator'
-        ];
-
-
-        return view('operator/out-product/add_edit', $data);
     }
 }
