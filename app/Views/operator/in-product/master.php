@@ -13,7 +13,7 @@
                         <input type="text" id="dataInput" placeholder="Data" title="Type in a name" class="form-control">
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 ml-auto">
+                <div class="col-lg-5 col-md-5 ml-auto">
                     <!-- <button class="btn btn-success btn-md" type="submit" href="/login">Tambah Barang</button> -->
                     <a class="btn btn-success btn-block rounded-lg" type="submit" href="/tambah_brgmasuk_op">Tambah Barang Masuk</a>
                 </div>

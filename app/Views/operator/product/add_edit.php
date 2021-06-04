@@ -12,7 +12,7 @@
                 <div class="card-body card-block">
                     <form action="<?= $action ?>" method="post" enctype="multipart/form-data" class="form-inline" style="font-size: 10,5pt;" id="form-master">
                     <?= csrf_field() ?>
-                    <input type="hidden" name="ID_BARANG" id="ID_BARANG" value="<?= (isset($category['ID_BARANG'])) ? $category['ID_BARANG'] : '' ?>">
+                    <input type="hidden" name="ID_BARANG" id="ID_BARANG" value="<?= (isset($product['ID_BARANG'])) ? $product['ID_BARANG'] : '' ?>">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-4 col-md-4">

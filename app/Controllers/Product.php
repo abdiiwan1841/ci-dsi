@@ -89,6 +89,9 @@ class Product extends BaseController
     public function process_edit()
     {
         if (!empty($_POST)){
+            // echo \var_dump($_POST);
+            // exit;
+
             $add = $this->ProdukModel->save([
                 'ID_BARANG'     => $this->request->getVar('ID_BARANG'),
                 'ID_SATUAN'     => $this->request->getVar('NOTASI'),
